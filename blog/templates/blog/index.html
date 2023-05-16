@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    My blog
+{% endblock %}
+
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/index.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/post.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <section id="welcome">
+        <header id="main-navigation">
+            <img src="{% static 'blog/images/max.png' %}" alt="Max - The Author Of This Blog">
+            <h2>MAXIMILIAN'S BLOG</h2>
+        </header>
+
+        <p>Hi, I am Max and I love to blog about tech and the world!</p>
+    </section>
+
+    <section id="latest-posts">
+        <h2>My Latest Thoughts</h2>
+
+        <ul>
+            {% for post in posts %}
+                {% include 'blog/includes/post.html' %}
+            {% endfor %}
+        </ul>
+
+    </section>
+
+    <section id="about">
+        <h2>What I Do</h2>
+        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
+            Latin</p>
+        <p>
+            Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in
+            their infancy.
+        </p>
+    </section>
+{% endblock %}
+

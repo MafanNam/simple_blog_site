@@ -1,0 +1,15 @@
+{% load static %}
+
+<li>
+    <article class="post">
+        <a href="{% url 'single_post' 'the-mountains' %}">
+            <img src="{% static 'blog/images/mountains.jpg' %}" alt="Mountain Hiking">
+            <div class="post_content">
+                <h3>{{ post }}</h3>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+                    looking at its layout.</p>
+            </div>
+        </a>
+
+    </article>
+</li>
