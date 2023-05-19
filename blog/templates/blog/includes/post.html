@@ -2,12 +2,11 @@
 
 <li>
     <article class="post">
-        <a href="{% url 'single_post' 'the-mountains' %}">
-            <img src="{% static 'blog/images/mountains.jpg' %}" alt="Mountain Hiking">
+        <a href="{% url 'single_post' post.slug %}">
+            <img src="{{ post.image_name.url }}" alt="{{ post.title }}">
             <div class="post_content">
                 <h3>{{ post }}</h3>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when
-                    looking at its layout.</p>
+                <p>{{ post.excerpt }}</p>
             </div>
         </a>
 
